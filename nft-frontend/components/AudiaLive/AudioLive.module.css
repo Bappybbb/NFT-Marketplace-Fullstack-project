@@ -1,0 +1,110 @@
+/* ===============================
+   AudioLive.module.css
+   =============================== */
+
+.audioLive {
+  width: 100%;
+}
+
+.audioLive_box {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-block: 2rem 8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ---------- Left column: two cards side by side ---------- */
+.audioLive_box_left {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ---------- Right column: small cards stacked ---------- */
+.audioLive_box_right {
+  padding-top: 0.5rem;
+  display: grid;
+  gap: 2rem;
+  align-content: start;
+}
+
+/* ===============================
+   Responsive breakpoints
+   =============================== */
+
+/* ---------- Mobile: 320px – 480px ---------- */
+@media screen and (max-width: 480px) {
+  .audioLive_box {
+    width: 92%;
+    padding-block: 1.5rem 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .audioLive_box_left {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .audioLive_box_right {
+    gap: 1.25rem;
+  }
+}
+
+/* ---------- Small tablets: 481px – 768px ---------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .audioLive_box {
+    width: 90%;
+    padding-block: 2rem 5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .audioLive_box_left {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .audioLive_box_right {
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- Laptop: 769px – 1200px ---------- */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .audioLive_box {
+    width: 88%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .audioLive_box_left {
+    gap: 1.75rem;
+  }
+
+  .audioLive_box_right {
+    gap: 1.75rem;
+  }
+}
+
+/* ---------- Desktop: 1201px+ ---------- */
+@media screen and (min-width: 1201px) {
+  .audioLive_box {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .audioLive_box_left {
+    gap: 2.5rem;
+  }
+
+  .audioLive_box_right {
+    gap: 2.5rem;
+  }
+}

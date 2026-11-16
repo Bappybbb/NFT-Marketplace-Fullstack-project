@@ -1,0 +1,259 @@
+.AuthorProfileCard {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+/* ---------- Desktop (default) ---------- */
+.AuthorProfileCard_box {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  gap: 3rem;
+}
+
+.AuthorProfileCard_box_img_img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.AuthorProfileCard_box_info {
+  min-width: 0;
+}
+
+.AuthorProfileCard_box_info h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.AuthorProfileCard_box_info_verified {
+  display: inline-flex;
+  color: var(--icons-color);
+}
+
+.AuthorProfileCard_box_info_address {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 30rem;
+  margin-bottom: 1rem;
+}
+
+.AuthorProfileCard_box_info_address input {
+  flex: 1;
+  min-width: 0;
+  outline: none;
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  text-overflow: ellipsis;
+}
+
+.AuthorProfileCard_box_info_address_icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in;
+}
+
+.AuthorProfileCard_box_info_address_icon:hover {
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  color: var(--icons-color);
+}
+
+.AuthorProfileCard_box_info_address_copied {
+  font-size: 0.9rem;
+}
+
+.AuthorProfileCard_box_info_bio {
+  font-size: 1.1rem;
+  width: 90%;
+  margin: 0 0 1rem;
+}
+
+.AuthorProfileCard_box_info_social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.AuthorProfileCard_box_info_social a {
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+  border-radius: 50%;
+  display: grid;
+  padding: 0.5rem;
+  border: 1px solid var(--icons-color);
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.AuthorProfileCard_box_info_social a:hover {
+  box-shadow: var(--box-shadow);
+  background-color: var(--main-bg-color);
+  color: var(--icons-color);
+}
+
+/* ---------- Share / report ---------- */
+.AuthorProfileCard_box_share {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 2rem;
+  position: relative;
+}
+
+.AuthorProfileCard_box_share_icon {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.AuthorProfileCard_box_share_upload,
+.AuthorProfileCard_box_share_report {
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  padding: 0.8rem 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 1rem;
+  background-color: var(--main-bg-color);
+  z-index: 1000;
+}
+
+.AuthorProfileCard_box_share_upload {
+  left: 0;
+  width: 15rem;
+}
+
+.AuthorProfileCard_box_share_report {
+  right: 0;
+  width: max-content;
+  margin: 0;
+}
+
+.AuthorProfileCard_box_share_upload p,
+.AuthorProfileCard_box_share_report {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.AuthorProfileCard_box_share_upload p {
+  margin: 0.5rem 0;
+}
+
+/* ---------- Laptop ---------- */
+@media screen and (max-width: 1200px) {
+  .AuthorProfileCard_box {
+    width: 90%;
+    grid-template-columns: 180px 1fr auto;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .AuthorProfileCard_box_info h2 {
+    font-size: 2.2rem;
+  }
+
+  .AuthorProfileCard_box_share {
+    gap: 1.2rem;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media screen and (max-width: 900px) {
+  .AuthorProfileCard {
+    margin-top: 3rem;
+  }
+
+  .AuthorProfileCard_box {
+    grid-template-columns: 160px 1fr;
+    gap: 1.5rem 2rem;
+  }
+
+  .AuthorProfileCard_box_info_bio {
+    width: 100%;
+  }
+
+  .AuthorProfileCard_box_share {
+    grid-column: 1 / -1;
+    align-self: center;
+    justify-content: flex-start;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media screen and (max-width: 560px) {
+  .AuthorProfileCard {
+    margin-top: 2rem;
+  }
+
+  .AuthorProfileCard_box {
+    width: 92%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 1.2rem;
+  }
+
+  .AuthorProfileCard_box_img_img {
+    max-width: 160px;
+    margin: 0 auto;
+  }
+
+  .AuthorProfileCard_box_info {
+    width: 100%;
+  }
+
+  .AuthorProfileCard_box_info h2 {
+    justify-content: center;
+    font-size: 1.8rem;
+  }
+
+  .AuthorProfileCard_box_info_address {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .AuthorProfileCard_box_info_social {
+    justify-content: center;
+  }
+
+  .AuthorProfileCard_box_share {
+    grid-column: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .AuthorProfileCard_box_share_icon {
+    font-size: 2.2rem;
+  }
+
+  .AuthorProfileCard_box_share_upload {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+  }
+
+  .AuthorProfileCard_box_share_report {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

@@ -7,12 +7,24 @@ import { TiTick } from "react-icons/ti";
 import Style from "./FollowerTabCard.module.css";
 import images from "../../../img";
 
-const FollowerTabCard = ({ i, el }) => {
-  const [following, setFollowing] = useState(false);
 
-  const followMe = () => {
-    setFollowing((prev) => !prev);
-  };
+
+
+
+
+
+const FollowerTabCard = ({ i, el }) => {
+
+
+
+        
+        const [following, setFollowing] = useState(false);
+
+        const followMe = () => {
+          setFollowing((prev) => !prev);
+        };
+
+  if (!el) return null;
 
   return (
     <div className={Style.followertabCard}>
@@ -25,11 +37,11 @@ const FollowerTabCard = ({ i, el }) => {
       <div className={Style.followertabCard_box}>
         <div className={Style.followertabCard_box_img}>
           <Image
-            src={images.creatorbackground1}
+            className={Style.followertabCard_box_img_img}
+            src={el.background}
             alt="profile background"
             width={500}
             height={300}
-            style={{ objectFit: "cover" }}
           />
         </div>
 
@@ -37,9 +49,9 @@ const FollowerTabCard = ({ i, el }) => {
           <Image
             className={Style.followertabCard_box_profile_img}
             alt="profile picture"
-            width={50}
-            height={50}
-            src={images.user1}
+            width={100}
+            height={100}
+            src={el.user}
           />
         </div>
 
@@ -55,7 +67,7 @@ const FollowerTabCard = ({ i, el }) => {
           </div>
 
           <div className={Style.followertabCard_box_info_following}>
-            <a onClick={followMe}>
+            <button type="button" onClick={followMe}>
               {following ? (
                 <>
                   Following{" "}
@@ -66,7 +78,7 @@ const FollowerTabCard = ({ i, el }) => {
               ) : (
                 "Follow"
               )}
-            </a>
+            </button>
           </div>
         </div>
       </div>

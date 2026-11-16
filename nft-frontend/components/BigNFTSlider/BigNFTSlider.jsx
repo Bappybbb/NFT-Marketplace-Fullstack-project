@@ -45,7 +45,13 @@ const BigNFTSlider = () => {
       time: { days: 10, hours: 2, minutes: 15, seconds: 30 },
     },
   ];
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIdNumber((prev) => (prev === sliderData.length - 1 ? 0 : prev + 1));
+  }, 2000); // 👈 2 সেকেন্ড
 
+  return () => clearInterval(interval);
+}, []);
   const [idNumber, setIdNumber] = useState(0);
   const activeItem = sliderData[idNumber];
 

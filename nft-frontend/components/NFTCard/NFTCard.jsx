@@ -10,7 +10,21 @@ import images from "../../img";
 const BASE_LIKES = 22;
 
 const NFTCard = () => {
-  const featureArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+
+
+
+ 
+const CardArray = [
+  images.nft_image_1,
+  images.nft_image_2,
+  images.nft_image_1,
+  images.nft_image_3,
+  images.nft_image_3,
+  images.nft_image_2,
+];
+
+
 
   // one "liked" flag per card
   const [likedMap, setLikedMap] = useState({});
@@ -21,14 +35,14 @@ const NFTCard = () => {
 
   return (
     <div className={Style.NFTCard}>
-      {featureArray.map((el) => {
+      {CardArray.map((el) => {
         const liked = !!likedMap[el];
 
         return (
           <div className={Style.NFTCard_box} key={el}>
             <div className={Style.NFTCard_box_img}>
               <Image
-                src={images.nft_image_1}
+                src={el}
                 alt="NFT images"
                 width={600}
                 height={600}

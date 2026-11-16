@@ -6,6 +6,25 @@
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
 }
+/* 👇 নতুন যোগ করো — motion div এর জন্য */
+.bigNFTSlider_box_right_box {
+  position: relative;
+  width: 100%;
+}
+
+.bigNFTSlider_box_right_box_like {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  background-color: var(--icons-color);
+  color: var(--shadow-dark-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+}
 
 /* ================= LEFT ================= */
 .bigNFTSlider_box_left {

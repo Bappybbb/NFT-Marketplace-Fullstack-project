@@ -1,0 +1,243 @@
+/* =========================================================
+   FollowerTabCard.module.css
+   Values assume html { font-size: 62.5% } (1rem = 10px).
+   Variables: --main-bg-color, --icons-color, --box-shadow,
+              --shadow-dark-color
+   Card width is controlled by the grid in FollowerTab.module.css:
+     Mobile  (<576px)      : 1 column
+     Mobile+ (576px+)      : 2 columns
+     Tablet  (768px+)      : 3 columns
+     Laptop  (992px+)      : 4 columns
+     Desktop (1440px+)     : 4 columns, wider
+   ========================================================= */
+
+/* ---------- Card ---------- */
+.followertabCard {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  border-radius: 2rem;
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+}
+
+/* ---------- Rank badge (#1 🏅) ---------- */
+.followertabCard_rank {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  margin: 1rem;
+  padding: 0.4rem 1rem;
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+  border: 1px solid var(--icons-color);
+  border-radius: 2rem;
+  transition: all 0.3s ease-in;
+}
+
+.followertabCard_rank p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.followertabCard_rank:hover {
+  background-color: var(--main-bg-color);
+  color: var(--icons-color);
+}
+
+/* ---------- Box ---------- */
+.followertabCard_box {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.6rem;
+  border-radius: 2rem;
+  background-color: var(--main-bg-color);
+  transition: all 0.3s ease-in;
+}
+
+.followertabCard_box:hover {
+  box-shadow: var(--box-shadow);
+}
+
+/* ---------- Cover image ---------- */
+.followertabCard_box_img {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.followertabCard_box_img_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Profile picture (centered, overlaps the cover) ---------- */
+.followertabCard_box_profile {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: -3.5rem;
+}
+
+.followertabCard_box_profile_img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.6rem solid var(--main-bg-color);
+  background-color: var(--main-bg-color);
+}
+
+/* ---------- Info row ---------- */
+.followertabCard_box_info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.6rem 0;
+}
+
+.followertabCard_box_info_name {
+  min-width: 0;
+}
+
+.followertabCard_box_info_name h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.followertabCard_box_info_name h4 span {
+  display: inline-flex;
+  color: var(--icons-color);
+}
+
+.followertabCard_box_info_name p {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+/* ---------- Follow button ---------- */
+.followertabCard_box_info_following button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.7rem 1.5rem;
+  font: inherit;
+  font-size: 1.3rem;
+  color: inherit;
+  white-space: nowrap;
+  background-color: var(--shadow-dark-color);
+  border: 1px solid var(--shadow-dark-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.followertabCard_box_info_following button:hover,
+.followertabCard_box_info_following button:focus-visible {
+  background-color: transparent;
+}
+
+/* =========================================================
+   TABLET + LAPTOP (768px - 1439px): cards are narrower,
+   so text and avatar get a little smaller
+   ========================================================= */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .followertabCard_box {
+    padding-bottom: 1.2rem;
+  }
+
+  .followertabCard_box_profile {
+    margin-top: -3rem;
+  }
+
+  .followertabCard_box_profile_img {
+    width: 6rem;
+    height: 6rem;
+    border-width: 0.5rem;
+  }
+
+  .followertabCard_box_info {
+    padding: 0.8rem 1.2rem 0;
+    gap: 0.8rem;
+  }
+
+  .followertabCard_box_info_name h4 {
+    font-size: 1.4rem;
+  }
+
+  .followertabCard_box_info_name p {
+    font-size: 1.2rem;
+  }
+
+  .followertabCard_box_info_following button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   DESKTOP (1440px and up): more room, slightly bigger text
+   ========================================================= */
+@media screen and (min-width: 1440px) {
+  .followertabCard_box_profile {
+    margin-top: -4rem;
+  }
+
+  .followertabCard_box_profile_img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .followertabCard_box_info {
+    padding: 1.2rem 2rem 0;
+  }
+
+  .followertabCard_box_info_name h4 {
+    font-size: 1.6rem;
+  }
+
+  .followertabCard_box_info_name p {
+    font-size: 1.4rem;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES (max 380px)
+   ========================================================= */
+@media screen and (max-width: 380px) {
+  .followertabCard_box_info {
+    padding: 1rem 1.2rem 0;
+  }
+
+  .followertabCard_box_info_name h4 {
+    font-size: 1.4rem;
+  }
+
+  .followertabCard_box_info_following button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .followertabCard_rank,
+  .followertabCard_box,
+  .followertabCard_box_info_following button {
+    transition: none;
+  }
+}
