@@ -7,8 +7,14 @@ import Style from "./Category.module.css";
 import images from "../../img";
 
 const Category = () => {
-  // Fixed typo: CategoriyArray -> CategoryArray
-  const CategoryArray = [1, 2, 3, 4, 5, 6];
+   const CategoryArray = [
+    images.creatorbackground1,
+    images.creatorbackground2,
+    images.creatorbackground3,
+    images.creatorbackground4,
+     images.creatorbackground6,
+     images.creatorbackground8,
+    ];
 
   return (
     <div className={Style.box_category}>
@@ -17,7 +23,7 @@ const Category = () => {
           // Fixed: key={1+1} theke key={i} kora hoyeche
           <div className={Style.category_box} key={i}>
             <Image
-              src={images.creatorbackground1}
+              src={el}
               className={Style.category_box_img}
               alt="Background image"
               width={350}

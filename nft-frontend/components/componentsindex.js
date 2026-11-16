@@ -11,9 +11,11 @@ import Filter from "./Filter/Filter.jsx";
 import NFTCard from "./NFTCard/NFTCard.jsx";
  import Collection from "./Collection/Collection.jsx";
 import FollowerTab from "./FollowerTab/FollowerTab.jsx";
-
-
-
+import AudioLive from "./AudiaLive/AudioLive.jsx";
+import LikeProfile from "./LikeProfile/LikeProfile.jsx";
+import Slider from "./Slider/Slider.jsx";
+import Brand from "./Brand/Brand.jsx";
+import Video from "./Video/Video.jsx";
 
 export {
   Button,
@@ -29,4 +31,9 @@ export {
   NFTCard,
   Collection,
   FollowerTab,
+  AudioLive,
+  LikeProfile,
+  Slider,
+  Brand,
+  Video,
 };

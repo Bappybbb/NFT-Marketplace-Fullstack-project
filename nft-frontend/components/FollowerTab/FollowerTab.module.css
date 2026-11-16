@@ -1,0 +1,247 @@
+/* =========================================================
+   FollowerTab.module.css
+   Matches the tutorial design (pill tab bar + 4-column grid
+   at 1024px). Values are in rem assuming html { font-size: 62.5% }
+   (1rem = 10px), same as your original CSS.
+
+   Mobile  : default (below 576px)  -> 1 column
+   Mobile+ : 576px  and up          -> 2 columns
+   Tablet  : 768px  and up          -> 3 columns
+   Laptop  : 992px  and up          -> 4 columns  (as in tutorial)
+   Desktop : 1440px and up          -> 4 columns, more space
+   Variables: --main-bg-color, --icons-color, --box-shadow
+   ========================================================= */
+
+/* ---------- Section ---------- */
+.followerTab {
+  width: 100%;
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 13rem;
+}
+
+/* ---------- Title + tab bar ---------- */
+.followerTab_title {
+  width: 90%;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 0 0 6rem 0;
+  text-align: center;
+}
+
+.followerTab_title h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.followerTab_tabs_btn {
+  background-color: var(--main-bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  box-shadow: var(--box-shadow);
+}
+
+.followerTab_tabs_btn button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  font-size: inherit;
+  white-space: nowrap;
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+  border: 1px solid var(--icons-color);
+  border-radius: 4rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.followerTab_tabs_btn button:hover,
+.followerTab_tabs_btn button:focus-visible {
+  background-color: transparent;
+  color: var(--icons-color);
+}
+
+/* ---------- Cards grid ---------- */
+.followerTab_box {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* mobile: 1 column */
+  gap: 2rem;
+}
+
+/* Stops cards from stretching the grid columns (no sideways scroll) */
+.followerTab_box > * {
+  min-width: 0;
+}
+
+/* ---------- Member buttons ("show me more" / "Become an author") ---------- */
+.followerTab_member {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.followerTab_member_box {
+  margin: 0 auto;
+  padding: 4rem 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.followerTab_member_box a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  color: var(--main-bg-color);
+  background-color: var(--icons-color);
+  border: 1px solid var(--icons-color);
+  border-radius: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease-in;
+}
+
+/* first button = outlined, second button = filled */
+.followerTab_member_box a:first-child {
+  background-color: transparent;
+  color: var(--icons-color);
+}
+
+/* hover = swap the two styles */
+.followerTab_member_box a:first-child:hover,
+.followerTab_member_box a:first-child:focus-visible {
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+}
+
+.followerTab_member_box a:last-child:hover,
+.followerTab_member_box a:last-child:focus-visible {
+  background-color: transparent;
+  color: var(--icons-color);
+}
+
+/* =========================================================
+   MOBILE+ (576px and up) -> 2 columns
+   ========================================================= */
+@media screen and (min-width: 576px) {
+  .followerTab_title {
+    max-width: 30rem;
+  }
+
+  .followerTab_title h2 {
+    font-size: 2.6rem;
+    margin-bottom: 4rem;
+  }
+
+  .followerTab_tabs_btn {
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+    gap: 1rem;
+  }
+
+  .followerTab_box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .followerTab_member_box a {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================================================
+   TABLET (768px and up) -> 3 columns
+   ========================================================= */
+@media screen and (min-width: 768px) {
+  .followerTab_title h2 {
+    font-size: 3rem;
+  }
+
+  .followerTab_box {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 85%;
+  }
+}
+
+/* =========================================================
+   LAPTOP (992px and up) -> 4 columns (tutorial design)
+   ========================================================= */
+@media screen and (min-width: 992px) {
+  .followerTab_box {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 80%;
+  }
+
+  .followerTab_member_box {
+    padding-top: 6rem;
+    gap: 1.5rem;
+  }
+}
+
+/* =========================================================
+   DESKTOP (1440px and up)
+   ========================================================= */
+@media screen and (min-width: 1440px) {
+  .followerTab {
+    padding-top: 8rem;
+  }
+
+  .followerTab_title {
+    max-width: 34rem;
+  }
+
+  .followerTab_title h2 {
+    font-size: 3.4rem;
+  }
+
+  .followerTab_tabs_btn {
+    font-size: 1.3rem;
+  }
+
+  .followerTab_box {
+    width: 75%;
+    max-width: 140rem;
+    gap: 3rem;
+  }
+
+  .followerTab_member_box {
+    padding-top: 7rem;
+    gap: 2rem;
+  }
+
+  .followerTab_member_box a {
+    padding: 1.1rem 2.4rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES (max 380px): buttons stack full width
+   ========================================================= */
+@media screen and (max-width: 380px) {
+  .followerTab_member_box a {
+    flex: 1 1 100%;
+    max-width: 28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .followerTab_tabs_btn button,
+  .followerTab_member_box a {
+    transition: none;
+  }
+}

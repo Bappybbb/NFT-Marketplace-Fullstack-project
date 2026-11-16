@@ -1,0 +1,45 @@
+/* ===== মোবাইল ফার্স্ট ===== */
+.banner {
+  width: 100%;
+}
+
+.banner_img,
+.banner_img_desktop {
+  width: 100%;
+  position: relative;
+}
+
+/* মোবাইলে ছোট উচ্চতা */
+.banner_img {
+  height: 180px;   /* আপনার প্রয়োজন অনুযায়ী কম/বেশি করুন */
+  display: block;
+}
+
+.banner_img_desktop {
+  display: none;
+}
+
+/* ===== ট্যাবলেট (≥ 48em) ===== */
+@media screen and (min-width: 48em) {
+  .banner_img {
+    display: none;
+  }
+  .banner_img_desktop {
+    display: block;
+    height: 200px;  /* ডেস্কটপ ব্যানারের উচ্চতা এখানে নিয়ন্ত্রণ করুন */
+  }
+}
+
+/* ===== ল্যাপটপ (≥ 64em) ===== */
+@media screen and (min-width: 64em) {
+  .banner_img_desktop {
+    height: 250px;
+  }
+}
+
+/* ===== ডেস্কটপ (≥ 90em) ===== */
+@media screen and (min-width: 90em) {
+  .banner_img_desktop {
+    height: 450px;
+  }
+}

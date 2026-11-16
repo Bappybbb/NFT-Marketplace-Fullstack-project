@@ -4,7 +4,7 @@
 //INternal com
 import Style from "./Collection.module.css";
 import DaysComponent from "./DaysComponent/DaysComponent.jsx";
-
+import images from "../../img";
 
 
  const Collection = () => {
@@ -13,10 +13,48 @@ const [popular, setPopular] = useState(true);
 const [following, setFollowing] = useState(false);
 const [news, setNews] = useState(false);
 
+ 
+ 
+  const CardArray = [
+    { background: images.creatorbackground1, user: images.user1 },
+    { background: images.creatorbackground2, user: images.user2 },
+    { background: images.creatorbackground3, user: images.user3 },
+    { background: images.creatorbackground4, user: images.user4 },
+    { background: images.creatorbackground5, user: images.user5 },
+    { background: images.creatorbackground6, user: images.user6 },
+    { background: images.creatorbackground7, user: images.user7 },
+    { background: images.creatorbackground8, user: images.user8 },
+    { background: images.creatorbackground9, user: images.user9 },
+    { background: images.creatorbackground10, user: images.user10 },
+  ];
 
-const CardArray=[1,2,3,4,5,6,7,8,9];
-const followingArray=[1,2,3,4];
-const newsArray=[1,2,3,4,5,6];
+  const newsArray = [
+    { background: images.creatorbackground5, user: images.user5 },
+    { background: images.creatorbackground6, user: images.user6 },
+    { background: images.creatorbackground7, user: images.user7 },
+    { background: images.creatorbackground8, user: images.user8 },
+    { background: images.creatorbackground9, user: images.user9 },
+    { background: images.creatorbackground10, user: images.user10 },
+  ];
+
+  const followingArray = [
+    { background: images.creatorbackground2, user: images.user2 },
+    { background: images.creatorbackground3, user: images.user3 },
+    { background: images.creatorbackground4, user: images.user4 },
+    { background: images.creatorbackground5, user: images.user5 },
+    { background: images.creatorbackground6, user: images.user6 },
+    { background: images.creatorbackground7, user: images.user7 },
+    { background: images.creatorbackground8, user: images.user8 },
+  ];
+
+
+
+
+
+
+
+
+
 
 const openPopular =()=>{
   if (!popular) {
@@ -47,13 +85,13 @@ const openNews =()=>{
          <div className={Style.collection_collections}>
            <div className={Style.collection_collections_btn}>
              <button onClick={() => openPopular()}>
-               <BsFillAlarmFill />   24 hours
+               <BsFillAlarmFill /> 24 hours
              </button>
              <button onClick={() => openFollowing()}>
-               <BsCalendar3 />   7 days
+               <BsCalendar3 /> 7 days
              </button>
              <button onClick={() => openNews()}>
-               <BsClipboardDataFill />   30 days
+               <BsClipboardDataFill /> 30 days
              </button>
            </div>
          </div>
@@ -61,21 +99,21 @@ const openNews =()=>{
        {popular && (
          <div className={Style.collection_box}>
            {CardArray.map((el, i) => (
-             <DaysComponent key={i + 1} />
+             <DaysComponent key={i + 1} i={i} el={el} />
            ))}
          </div>
        )}
        {following && (
          <div className={Style.collection_box}>
            {followingArray.map((el, i) => (
-             <DaysComponent key={i + 1} />
+             <DaysComponent key={i + 1} i={i} el={el} />
            ))}
          </div>
        )}
        {news && (
          <div className={Style.collection_box}>
            {newsArray.map((el, i) => (
-             <DaysComponent key={i + 1} />
+             <DaysComponent key={i + 1} i={i} el={el} />
            ))}
          </div>
        )}

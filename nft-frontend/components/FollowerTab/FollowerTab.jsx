@@ -4,11 +4,98 @@ import { RiUserFollowFill, RiAwardLine } from "react-icons/ri";
 //internal import
 import Style from "./FollowerTab.module.css";
 import FollowerTabCard from "./FollowerTabCard/FollowerTabCard.jsx"; // path ta tomar folder onujayi thik koro
+ import images from "../../img";
+
 
 const FollowerTab = () => {
-  const CardArray = [1, 2, 3, 4, 5, 6, 7, 8];
-  const FollowingArray = [1, 2, 3, 4, 5, 6];
-  const NewsArray = [1, 2, 3, 4, 5];
+
+
+
+  const CardArray = [
+   
+    {background:images.creatorbackground1,
+      user:images.user1,
+    },
+    {background:images.creatorbackground2,
+      user:images.user2,
+    },
+    {background:images.creatorbackground3,
+      user:images.user3,
+    },
+    {background:images.creatorbackground4,
+      user:images.user4,
+    },
+    {background:images.creatorbackground5,
+      user:images.user5,
+    },
+    {background:images.creatorbackground6,
+      user:images.user6,
+    },
+    {background:images.creatorbackground7,
+      user:images.user7,
+    },
+    {background:images.creatorbackground8,
+      user:images.user8,
+    },
+    {background:images.creatorbackground9,
+      user:images.user9,
+    },
+    {background:images.creatorbackground10,
+      user:images.user10,
+    }
+  ];
+
+
+
+  const FollowingArray = [
+    {background:images.creatorbackground5,
+      user:images.user5,
+    },
+    {background:images.creatorbackground6,
+      user:images.user6,
+    },
+    {background:images.creatorbackground7,
+      user:images.user7,
+    },
+    {background:images.creatorbackground8,
+      user:images.user8,
+    },
+    {background:images.creatorbackground9,
+      user:images.user9,
+    },
+    {background:images.creatorbackground10,
+      user:images.user10,
+    } 
+  ]
+
+
+
+
+  const NewsArray = [
+    {background:images.creatorbackground2,
+      user:images.user2,
+    },
+    {background:images.creatorbackground3,
+      user:images.user3,
+    },
+    {background:images.creatorbackground4,
+      user:images.user4,
+    },
+    {background:images.creatorbackground5,
+      user:images.user5,
+    },
+    {background:images.creatorbackground6,
+      user:images.user6,
+    },
+    {background:images.creatorbackground7,
+      user:images.user7,
+    },
+    {background:images.creatorbackground8,
+      user:images.user8,
+    },
+  ];
+
+  
 
   const [popular, setPopular] = useState(true);
   const [following, setFollowing] = useState(false);
@@ -38,15 +125,15 @@ const FollowerTab = () => {
         <h2>Top Creators List...</h2>
         <div className={Style.followerTab_tabs}>
           <div className={Style.followerTab_tabs_btn}>
-            <button onClick={openPopular}>
+            <button type="button" onClick={openPopular}>
               <RiUserFollowFill />
               Popular
             </button>
-            <button onClick={openFollower}>
+            <button type="button" onClick={openFollower}>
               <RiUserFollowFill />
               Following
             </button>
-            <button onClick={openNews}>
+            <button type="button" onClick={openNews}>
               <RiAwardLine />
               Noteworthy
             </button>
@@ -77,6 +164,13 @@ const FollowerTab = () => {
           ))}
         </div>
       )}
+
+      <div className={Style.followerTab_member}>
+        <div className={Style.followerTab_member_box}>
+          <a href="#">Show me more</a>
+          <a href="#">Become an author</a>
+        </div>
+      </div>
     </div>
   );
 };

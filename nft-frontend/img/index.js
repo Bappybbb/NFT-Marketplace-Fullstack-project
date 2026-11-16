@@ -41,6 +41,10 @@ import nft_image_2 from "./nft-image-2.png";
 import nft_image_3 from "./nft-image-3.png";
 import musiceWave from "./musicwave.png";
 import update from "./update.png";
+import earn from "./eran.png";
+import NFTVideo from "./NFTVideo.jpg";
+
+
 
 export default {
   collection,
@@ -51,7 +55,7 @@ export default {
   nft_image_3,
   getAble,
   nft_1,
-  hero, 
+  hero,
   creatorbackground1,
   creatorbackground2,
   creatorbackground3,
@@ -86,4 +90,6 @@ export default {
   vimeo,
   youtube,
   zgcmq,
+  earn,
+  NFTVideo,
 };
