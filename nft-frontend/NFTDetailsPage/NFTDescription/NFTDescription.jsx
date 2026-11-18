@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import {
   MdVerified,
   MdCloudUpload,
-  MdTimer,
   MdReportProblem,
   MdOutlineDeleteSweep,
 } from "react-icons/md";
@@ -27,9 +26,7 @@ import { NFTTabs } from "../NFTDetailsIndex";
 const NFTDescription = () => {
   const [social, setSocial] = useState(false);
   const [NFTMenu, setNFTMenu] = useState(false);
-  const [history, setHistory] = useState(true);
-  const [provanance, setProvanance] = useState(false);
-  const [owner, setOwner] = useState(false);
+  const [activeTab, setActiveTab] = useState("history");
 
   const historyArray = [
     images.user1,
@@ -71,24 +68,6 @@ const NFTDescription = () => {
     }
   };
 
-  const openTabs = (e) => {
-    const btnText = e.target.innerText;
-
-    if (btnText === "Bid History") {
-      setHistory(true);
-      setProvanance(false);
-      setOwner(false);
-    } else if (btnText === "Provanance") {
-      setHistory(false);
-      setProvanance(true);
-      setOwner(false);
-    } else if (btnText === "Owner") {
-      setHistory(false);
-      setProvanance(false);
-      setOwner(true);
-    }
-  };
-
   return (
     <div className={Style.NFTDescription}>
       <div className={Style.NFTDescription_box}>
@@ -96,10 +75,18 @@ const NFTDescription = () => {
         <div className={Style.NFTDescription_box_share}>
           <p>Virtual World</p>
           <div className={Style.NFTDescription_box_share_box}>
-            <MdCloudUpload
-              className={Style.NFTDescription_box_share_box_icon}
+            <button
+              type="button"
+              className={Style.NFTDescription_box_share_box_action}
               onClick={openSocial}
-            />
+              aria-label="Share NFT"
+              aria-expanded={social}
+            >
+              <MdCloudUpload
+                className={Style.NFTDescription_box_share_box_icon}
+                aria-hidden="true"
+              />
+            </button>
             {social && (
               <div className={Style.NFTDescription_box_share_box_social}>
                 <a href="#">
@@ -120,10 +107,18 @@ const NFTDescription = () => {
                 </a>
               </div>
             )}
-            <BsThreeDots
-              className={Style.NFTDescription_box_share_box_icon}
+            <button
+              type="button"
+              className={Style.NFTDescription_box_share_box_action}
               onClick={openNFTMenu}
-            />
+              aria-label="More NFT actions"
+              aria-expanded={NFTMenu}
+            >
+              <BsThreeDots
+                className={Style.NFTDescription_box_share_box_icon}
+                aria-hidden="true"
+              />
+            </button>
             {NFTMenu && (
               <div className={Style.NFTDescription_box_share_box_social}>
                 <a href="#">
@@ -272,12 +267,30 @@ const NFTDescription = () => {
                 Style.NFTDescription_box_profile_box_profile_bidding_box_tabs
               }
             >
-              <button onClick={(e) => openTabs(e)}>Bid History</button>
-              <button onClick={(e) => openTabs(e)}>Provanance</button>
-              <button onClick={(e) => openTabs(e)}>Owner</button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("history")}
+                aria-pressed={activeTab === "history"}
+              >
+                Bid History
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("provenance")}
+                aria-pressed={activeTab === "provenance"}
+              >
+                Provenance
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("owner")}
+                aria-pressed={activeTab === "owner"}
+              >
+                Owner
+              </button>
             </div>
 
-            {history && (
+            {activeTab === "history" && (
               <div
                 className={
                   Style.NFTDescription_box_profile_box_profile_bidding_box_card
@@ -286,7 +299,7 @@ const NFTDescription = () => {
                 <NFTTabs dataTab={historyArray} />
               </div>
             )}
-            {provanance && (
+            {activeTab === "provenance" && (
               <div
                 className={
                   Style.NFTDescription_box_profile_box_profile_bidding_box_card
@@ -295,13 +308,13 @@ const NFTDescription = () => {
                 <NFTTabs dataTab={provananceArray} />
               </div>
             )}
-            {owner && (
+            {activeTab === "owner" && (
               <div
                 className={
                   Style.NFTDescription_box_profile_box_profile_bidding_box_card
                 }
               >
-                <NFTTabs dataTab={ownerArray} />
+                <NFTTabs dataTab={ownerArray} icon={<MdVerified />} />
               </div>
             )}
           </div>

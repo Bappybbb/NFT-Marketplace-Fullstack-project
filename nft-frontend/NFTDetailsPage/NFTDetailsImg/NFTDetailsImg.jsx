@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { BsImages } from "react-icons/bs";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
@@ -22,8 +22,17 @@ const NFTDetailsImg = () => {
       <div className={Style.NFTDetailsImg_box}>
         <div className={Style.NFTDetailsImg_box_NFT}>
           <div className={Style.NFTDetailsImg_box_NFT_like}>
-            <BsImages className={Style.NFTDetailsImg_box_NFT_like_icon} />
-            <p onClick={likeNFT}>
+            <BsImages
+              className={Style.NFTDetailsImg_box_NFT_like_icon}
+              aria-hidden="true"
+            />
+            <button
+              type="button"
+              className={Style.NFTDetailsImg_box_NFT_like_button}
+              onClick={likeNFT}
+              aria-label={like ? "Unlike this NFT" : "Like this NFT"}
+              aria-pressed={like}
+            >
               {like ? (
                 <AiFillHeart
                   className={Style.NFTDetailsImg_box_NFT_like_icon}
@@ -34,7 +43,7 @@ const NFTDetailsImg = () => {
                 />
               )}
               <span>23</span>
-            </p>
+            </button>
           </div>
           <div className={Style.NFTDetailsImg_box_NFT_img}>
             <Image
@@ -43,21 +52,26 @@ const NFTDetailsImg = () => {
               alt="NFT image"
               width={700}
               height={800}
-              style={{ objectFit: "cover" }}
+              sizes="(max-width: 40em) 100vw, (max-width: 64em) 88vw, 45vw"
             />
           </div>
         </div>
-
         {/* Description */}
-        <div
+        <button
+          type="button"
           className={Style.NFTDetailsImg_box_description}
           onClick={openDescription}
+          aria-expanded={description}
+          aria-controls="nft-description"
         >
           <p>Description</p>
           {description ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
-        </div>
+        </button>
         {description && (
-          <div className={Style.NFTDetailsImg_box_description_box}>
+          <div
+            className={Style.NFTDetailsImg_box_description_box}
+            id="nft-description"
+          >
             <p>
               tattooed Kitty Gang (&quot;TKG&quot;) is a collection of 666
               badass kitty gangstars, with symbol of tattoos, living in the
@@ -66,14 +80,22 @@ const NFTDetailsImg = () => {
             </p>
           </div>
         )}
-
         {/* Details */}
-        <div className={Style.NFTDetailsImg_box_details} onClick={openDetails}>
+        <button
+          type="button"
+          className={Style.NFTDetailsImg_box_details}
+          onClick={openDetails}
+          aria-expanded={details}
+          aria-controls="nft-details"
+        >
           <p>Details</p>
           {details ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
-        </div>
+        </button>
         {details && (
-          <div>
+          <div
+            className={Style.NFTDetailsImg_box_details_box}
+            id="nft-details"
+          >
             <small>20000 x 2000 px.IMAGE(685KB)</small>
             <p>
               <small>Contract Address</small>

@@ -7,34 +7,32 @@ const Discover = () => {
     
   //----DISCOVER NAVIGATION MENU
   const discover = [
-    {name:"Collection",
-       link:"collection"
+    { name: "Collection", link: "collection" },
+    {
+      name: "Search",
+      link: "searchPage",
     },
     {
-      name:"Search",
-      link:"searchPage"
+      name: "Author Profile",
+      link: "author",
     },
     {
-     name:"Author Profile",
-     link:"author"
+      name: "Upload NFT",
+      link: "uploadNFT",
     },
     {
-     name:"NFT Details",
-     link:"NFT-details"
+      name: "Account Setting",
+      link: "account",
     },
     {
-     name:"Account Setting",
-     link:"account-setting"
+      name: "Connect Wallet",
+      link: "connectWallet",
     },
     {
-     name:"Connect Wallet",
-     link:"connect-wallet"
+      name: "Blog",
+      link: "blog",
     },
-    {
-     name:"Blog",
-     link:"blog"
-    }
-  ]
+  ];
 
 
 

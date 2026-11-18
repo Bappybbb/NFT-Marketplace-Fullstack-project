@@ -1,0 +1,124 @@
+.NFTDetailsImg {
+  width: 100%;
+  min-width: 0;
+}
+
+.NFTDetailsImg_box_NFT {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  border-radius: 1rem;
+  background: var(--icons-bg-color);
+}
+
+.NFTDetailsImg_box_NFT_img {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+
+.NFTDetailsImg_box_NFT_img_img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 48rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.NFTDetailsImg_box_NFT_like {
+  z-index: 1;
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: start;
+  padding: 1rem;
+  color: #fff;
+  pointer-events: none;
+}
+
+.NFTDetailsImg_box_NFT_like_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 2rem;
+  background: rgb(0 0 0 / 45%);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.NFTDetailsImg_box_NFT_like_button:focus-visible,
+.NFTDetailsImg_box_description:focus-visible,
+.NFTDetailsImg_box_details:focus-visible {
+  outline: 3px solid var(--icons-color);
+  outline-offset: 3px;
+}
+
+.NFTDetailsImg_box_NFT_like_icon {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+}
+
+.NFTDetailsImg_box_details,
+.NFTDetailsImg_box_description {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--icons-color);
+  color: var(--shadow-light-color);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.NFTDetailsImg_box_details p,
+.NFTDetailsImg_box_description p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.NFTDetailsImg_box_description_box,
+.NFTDetailsImg_box_details_box {
+  padding: 0.25rem 1rem;
+  overflow-wrap: anywhere;
+}
+
+.NFTDetailsImg_box_description_box p {
+  margin-block: 0.5rem;
+  line-height: 1.7;
+}
+
+.NFTDetailsImg_box_details_box p {
+  margin-block: 1rem;
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.99em) {
+  .NFTDetailsImg_box_NFT_img_img {
+    max-height: 38rem;
+  }
+}
+
+@media screen and (max-width: 39.99em) {
+  .NFTDetailsImg_box_NFT_img_img {
+    max-height: 32rem;
+  }
+
+  .NFTDetailsImg_box_NFT_like {
+    padding: 0.75rem;
+  }
+
+  .NFTDetailsImg_box_description,
+  .NFTDetailsImg_box_details {
+    margin-top: 0.75rem;
+  }
+}

@@ -1,11 +1,6 @@
-import React from 'react'
-
-
- 
 //INTERNAL IMPORT
 import Style from "./NFTDetailsPage.module.css";
-import { NFTDescription,NFTDetailsImg,NFTTabs } from "./NFTDetailsIndex";
- 
+import { NFTDescription, NFTDetailsImg } from "./NFTDetailsIndex";
 
 const NFTDetailsPage = () => {
   return (
@@ -16,6 +11,6 @@ const NFTDetailsPage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default NFTDetailsPage
+export default NFTDetailsPage;

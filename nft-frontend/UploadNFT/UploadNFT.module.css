@@ -1,0 +1,332 @@
+/* ===== Mobile (default, up to 639px) ===== */
+.upload {
+  width: 94%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-block: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* form card */
+.upload_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.4rem;
+  background: var(--main-bg-color, transparent);
+  border: 1px solid var(--shadow-dark-color, #cbd5e0);
+  border-radius: 1.2rem;
+  box-shadow: var(--box-shadow, 0 10px 30px rgba(0, 0, 0, 0.08));
+}
+
+/* ----- Form fields ----- */
+.From_box_input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.From_box_input label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.From_box_input p,
+.upload_box_input_para {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  opacity: 0.8;
+}
+
+.From_box_input input,
+.From_box_input textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--shadow-dark-color, #cbd5e0);
+  border-radius: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.From_box_input textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.From_box_input input:focus,
+.From_box_input textarea:focus {
+  border-color: var(--icons-color, #4a5568);
+  box-shadow: var(--box-shadow, 0 0 0 3px rgba(0, 0, 0, 0.08));
+}
+
+.From_box_input_userName {
+  width: 100%;
+}
+
+/* input with icon block on the left */
+.From_box_input_box {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--shadow-dark-color, #cbd5e0);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.From_box_input_box:focus-within {
+  border-color: var(--icons-color, #4a5568);
+  box-shadow: var(--box-shadow, 0 0 0 3px rgba(0, 0, 0, 0.08));
+}
+
+.From_box_input_box_icon {
+  flex: 0 0 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #fff;
+  background: var(--icons-color, #4a5568);
+}
+
+.From_box_input_box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.From_box_input_box input:focus {
+  box-shadow: none;
+}
+
+/* royalties / size / properties */
+.From_box_input_social {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+}
+
+/* ----- Collection cards ----- */
+.upload_box_slider_div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.upload_box_slider {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.95rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--shadow-dark-color, #cbd5e0);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.upload_box_slider:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow, 0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.upload_box_slider p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.upload_box_slider_box {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.upload_box_slider_box_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.upload_box_slider_box_img_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload_box_slider_box_img_icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--icons-color, #4a5568);
+  border-radius: 50%;
+  transition: background 0.25s ease;
+}
+
+/* selected card */
+.active {
+  color: #fff;
+  background: var(--icons-color, #4a5568);
+  border-color: var(--icons-color, #4a5568);
+}
+
+.active .upload_box_slider_box_img_icon {
+  background: transparent;
+}
+
+/* ----- Buttons (Upload + Preview) ----- */
+.upload_box_btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.upload_box_btn_style {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--icons-color, #4a5568);
+  border: none;
+  border-radius: 999px;
+  box-shadow: var(--box-shadow, 0 8px 18px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.upload_box_btn_style:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.upload_box_btn_style:active {
+  transform: translateY(0);
+}
+
+
+/* mobile */
+@media screen and (min-width:320px) and (max-width:425px)  {
+  .upload_box_btn{
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+/* ===== Tablet (640px and up) ===== */
+@media screen and (min-width: 40em) {
+  .upload {
+    width: 92%;
+    padding-block: 3.5rem;
+    gap: 2.5rem;
+  }
+
+  .upload_box {
+    padding: 2rem;
+    gap: 1.9rem;
+  }
+
+  .upload_box_slider_div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .From_box_input_social {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .upload_box_btn {
+    flex-direction: row;
+  }
+
+  .upload_box_btn_style {
+    flex: 1;
+  }
+}
+
+/* ===== Laptop (1024px and up): full screen, dropzone left + form right ===== */
+@media screen and (min-width: 64em) {
+  .upload {
+    width: 94%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding-block: 4rem;
+  }
+
+  .upload > :first-child {
+    flex: 0 0 38%;
+    position: sticky;
+    top: 5rem;
+  }
+
+  .upload_box {
+    flex: 1;
+    min-width: 0;
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+
+  .upload_box_slider_div {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* ===== Desktop (1440px and up) ===== */
+@media screen and (min-width: 90em) {
+  .upload {
+    width: 90%;
+    gap: 3.5rem;
+    padding-block: 5rem;
+  }
+
+  .upload > :first-child {
+    flex: 0 0 40%;
+  }
+
+  .upload_box {
+    padding: 3rem;
+    gap: 2.3rem;
+  }
+
+  .upload_box_slider_div {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
+  .upload_box_slider p {
+    font-size: 0.8rem;
+  }
+}

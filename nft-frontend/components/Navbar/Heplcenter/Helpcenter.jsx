@@ -11,7 +11,7 @@ const Helpcenter = () => {
         link:"about"
       },
       {name:"Contact Us",
-        link:"contact-us"
+        link:"contactUs"
       },
       {name:"Sign UP",
         link:"sign-up"

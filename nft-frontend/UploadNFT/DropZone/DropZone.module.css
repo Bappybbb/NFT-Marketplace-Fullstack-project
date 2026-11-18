@@ -1,0 +1,249 @@
+/* ===== Mobile (default, up to 639px) ===== */
+.DropZone {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ----- Drop area ----- */
+.DropZone_box {
+  width: 100%;
+  padding: 1rem .5rem;
+  background: var(--main-bg-color, transparent);
+  border: 2px dashed var(--shadow-dark-color, #cbd5e0);
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.DropZone_box:hover,
+.DropZone_box:focus {
+  border-color: var(--icons-color, #4a5568);
+  box-shadow: var(--box-shadow, 0 10px 24px rgba(0, 0, 0, 0.1));
+  transform: translateY(-2px);
+}
+
+.DropZone_box_input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  text-align: center;
+ }
+
+.DropZone_box_input p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* title: JPG, PNG, WEBM ... */
+.DropZone_box_input p:first-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+/* heading: Drag & drop file */
+.DropZone_box_input p:nth-of-type(2) {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* subHeading */
+.DropZone_box_input p:last-child {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.DropZone_box_input_img {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.DropZone_box_input_img_img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  /* filter: invert(); */
+}
+
+/* ----- Preview card ----- */
+.DropZone_box_aside {
+  width: 100%;
+}
+
+.DropZone_box_aside_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--main-bg-color, transparent);
+  border: 1px solid var(--shadow-dark-color, #cbd5e0);
+  border-radius: 1.2rem;
+  box-shadow: var(--box-shadow, 0 10px 30px rgba(0, 0, 0, 0.08));
+}
+
+/* dropped image (Next Image has no className, so target the tag) */
+.DropZone_box_aside_box > img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.DropZone_box_aside_box_preview {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.DropZone_box_aside_box_preview_one,
+.DropZone_box_aside_box_preview_two,
+.DropZone_box_aside_box_preview_three {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.DropZone_box_aside_box_preview_two,
+.DropZone_box_aside_box_preview_three {
+  padding-top: 1rem;
+  border-top: 1px solid var(--shadow-dark-color, #cbd5e0);
+}
+
+.DropZone_box_aside_box_preview p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.DropZone_box_aside_box_preview span {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* royalties / size / properties / category in a grid */
+.DropZone_box_aside_box_preview_three {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+/* ===== Tablet (640px and up): image left, details right ===== */
+@media screen and (min-width: 40em) {
+  .DropZone {
+    gap: 1.5rem;
+  }
+
+  .DropZone_box {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .DropZone_box_input_img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .DropZone_box_input p:nth-of-type(2) {
+    font-size: 1.15rem;
+  }
+
+  .DropZone_box_aside_box {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.4rem;
+  }
+
+  .DropZone_box_aside_box > img {
+    width: 200px;
+    height: 200px;
+    flex: 0 0 200px;
+    max-height: none;
+  }
+
+  .DropZone_box_aside_box_preview {
+    flex: 1;
+  }
+
+  .DropZone_box_aside_box_preview_three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Laptop (1024px and up): left column, stacked card ===== */
+@media screen and (min-width: 64em) {
+  .DropZone {
+    gap: 1.5rem;
+  }
+
+  .DropZone_box {
+    padding: 2.8rem 1.5rem;
+  }
+
+  .DropZone_box_aside_box {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .DropZone_box_aside_box > img {
+    width: 100%;
+    height: auto;
+    flex: none;
+    max-height: 300px;
+  }
+}
+
+/* ===== Desktop (1440px and up) ===== */
+@media screen and (min-width: 90em) {
+  .DropZone {
+    gap: 2rem;
+  }
+
+  .DropZone_box {
+    padding: 3.5rem 2rem;
+  }
+
+  .DropZone_box_input {
+    gap: 0.8rem;
+  }
+
+  .DropZone_box_input_img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .DropZone_box_input p:nth-of-type(2) {
+    font-size: 1.25rem;
+  }
+
+  .DropZone_box_aside_box {
+    padding: 1.6rem;
+  }
+
+  .DropZone_box_aside_box > img {
+    max-height: 380px;
+  }
+
+  .DropZone_box_aside_box_preview p {
+    font-size: 0.95rem;
+  }
+}

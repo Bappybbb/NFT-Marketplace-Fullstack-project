@@ -43,10 +43,20 @@ import musiceWave from "./musicwave.png";
 import update from "./update.png";
 import earn from "./eran.png";
 import NFTVideo from "./NFTVideo.jpg";
+import upload from "./upload.png";
+import provider1 from "./provider1.png";
+import provider2 from "./provider2.png";
+import provider3 from "./provider3.png";
+import provider4 from "./provider4.png";
 
-
+import founder1 from "./founder1.png.jpg";
+import founder2 from "./founder2.png";
+import founder3 from "./founder3.png";
+import founder4 from "./founder4.png";
+ import hero3 from "./hero3.png";
 
 export default {
+  hero3,
   collection,
   update,
   musiceWave,
@@ -92,4 +102,13 @@ export default {
   zgcmq,
   earn,
   NFTVideo,
+  upload,
+  provider1,
+  provider2,
+  provider3,
+  provider4,
+  founder4,
+  founder3,
+  founder2,
+  founder1,
 };
