@@ -1,0 +1,62 @@
+.NFTTabs {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.NFTTabs_box {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid var(--icons-light-color);
+  border-radius: 0.75rem;
+  background: var(--main-bg-color);
+}
+
+.NFTTabs_box_img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.NFTTabs_box_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.NFTTabs_box_info > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.NFTTabs_box_info > span:first-child span {
+  font-weight: 600;
+}
+
+.NFTTabs_box_info small {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.NFTTabs_box_verified {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: #3878f8;
+}
+
+@media screen and (max-width: 39.99em) {
+  .NFTTabs_box_info {
+    flex-wrap: wrap;
+  }
+
+  .NFTTabs_box_info small {
+    margin-left: auto;
+  }
+}

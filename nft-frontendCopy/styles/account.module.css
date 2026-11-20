@@ -1,0 +1,207 @@
+/* ==============================
+   ACCOUNT PAGE
+   ============================== */
+.account {
+  width: 100%;
+  margin-block: 6rem;
+  perspective: 1200px; /* enables 3D space for children */
+}
+
+/* ---------- Header ---------- */
+.account_info {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--shadow-dark-color);
+}
+
+.account_info h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+background-color: var(--icons-color);  
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 112, 243, 0.15);
+}
+
+.account_info p {
+  font-size: 1.3rem;
+  width: 80%;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* ---------- Grid layout ---------- */
+.account_box {
+  width: 50%;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* ---------- Avatar / dropzone ---------- */
+.account_box_img {
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  transition: transform 0.35s ease;
+  transform-style: preserve-3d;
+}
+
+.account_box_img:hover {
+  transform: translateY(-6px) rotateX(4deg) rotateY(-4deg);
+}
+
+.account_box_img_img {
+  border-radius: 50%;
+  transition: opacity 0.25s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+              0 0 0 4px rgba(0, 112, 243, 0.08);
+  transform-style: preserve-3d;
+}
+
+.account_box_img:hover .account_box_img_img {
+  opacity: 0.9;
+  box-shadow: 0 16px 32px rgba(0, 112, 243, 0.25),
+              0 0 0 6px rgba(0, 112, 243, 0.15);
+  transform: translateZ(20px);
+}
+
+.account_box_img_para {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-top: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.account_box_img:hover .account_box_img_para {
+  color: var(--primary-color, #0070f3);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+/* Large tablets / small desktops */
+@media screen and (max-width: 75em) {
+  .account_info,
+  .account_box {
+    width: 70%;
+  }
+}
+
+/* Tablets (landscape) */
+@media screen and (max-width: 56.25em) {
+  .account {
+    margin-block: 4rem;
+  }
+
+  .account_info,
+  .account_box {
+    width: 85%;
+  }
+
+  .account_info h1 {
+    font-size: 3rem;
+  }
+
+  .account_info p {
+    font-size: 1.15rem;
+  }
+
+  .account_box {
+    gap: 2rem;
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+/* Tablets (portrait) */
+@media screen and (max-width: 43.75em) {
+  .account_info {
+    width: 90%;
+    text-align: center;
+  }
+
+  .account_info p {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .account_box {
+    width: 90%;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    justify-items: center;
+  }
+
+  .account_box_img {
+    margin-top: 1rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 35em) {
+  .account {
+    margin-block: 3rem;
+  }
+
+  .account_info {
+    width: 92%;
+    padding-bottom: 0.75rem;
+  }
+
+  .account_info h1 {
+    font-size: 2rem;
+  }
+
+  .account_info p {
+    font-size: 1rem;
+  }
+
+  .account_box {
+    width: 92%;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .account_box_img_img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .account_box_img_para {
+    font-size: 1rem;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 22.5em) {
+  .account_info h1 {
+    font-size: 1.65rem;
+  }
+
+  .account_info p {
+    font-size: 0.9rem;
+  }
+
+  .account_box {
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .account_box_img_img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .account_box_img_para {
+    font-size: 0.9rem;
+  }
+}

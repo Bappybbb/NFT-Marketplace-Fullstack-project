@@ -1,0 +1,3 @@
+install hardhat
+>npx hardhat init
+npm i hardhat

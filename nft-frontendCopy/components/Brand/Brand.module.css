@@ -1,0 +1,154 @@
+/* ============ BASE (Mobile: up to 639px) ============ */
+.Brand {
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.Brand_box {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* single column */
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.Brand_box_left {
+  text-align: center;
+}
+
+.Brand_box_left_logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.Brand_box_left h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.Brand_box_left p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  opacity: 0.85;
+}
+
+.Brand_box_left_btn {
+  display: flex;
+  flex-direction: row; /* stacked buttons on phones */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.Brand_box_right {
+  width: 100%;
+}
+
+.Brand_box_right_img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============ TABLET (640px - 1023px) ============ */
+@media screen and (min-width: 640px) {
+  .Brand {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+  }
+
+  .Brand_box {
+    width: 85%;
+    gap: 3rem;
+  }
+
+  .Brand_box_left h1 {
+    font-size: 3rem;
+  }
+
+  .Brand_box_left p {
+    font-size: 1.15rem;
+  }
+
+  .Brand_box_left_btn {
+    flex-direction: row; /* buttons side by side */
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .Brand_box_right_img {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* ============ LAPTOP (1024px - 1439px) ============ */
+@media screen and (min-width: 1024px) {
+  .Brand {
+    margin-top: 8rem;
+    margin-bottom: 6rem;
+  }
+
+  .Brand_box {
+    width: 85%;
+    grid-template-columns: 1fr 1fr; /* two columns */
+    gap: 3rem;
+  }
+
+  .Brand_box_left {
+    text-align: left;
+  }
+
+  .Brand_box_left_logo {
+    width: 90px;
+  }
+
+  .Brand_box_left h1 {
+    font-size: 3.5rem;
+  }
+
+  .Brand_box_left_btn {
+    justify-content: flex-start;
+  }
+
+  .Brand_box_right_img {
+    max-width: 100%;
+  }
+}
+
+/* ============ DESKTOP (1440px and up) ============ */
+@media screen and (min-width: 1440px) {
+  .Brand {
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+  }
+
+  .Brand_box {
+    width: 80%;
+    max-width: 1600px;
+    gap: 5rem;
+  }
+
+  .Brand_box_left_logo {
+    width: 100px;
+  }
+
+  .Brand_box_left h1 {
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .Brand_box_left p {
+    font-size: 1.3rem;
+  }
+
+  .Brand_box_left_btn {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}

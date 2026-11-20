@@ -1,0 +1,214 @@
+/* ===============================
+   AudioCardSmall.module.css
+   =============================== */
+
+/* ---------- Outer wrapper ---------- */
+.audioPlayer {
+  width: 100%;
+}
+
+/* ---------- Row container ---------- */
+.audioPlayer_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  background-color: var(--main-bg-color);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.audioPlayer_box:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- Cover image ---------- */
+.audioPlayer_box_img {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.audioPlayer_box_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Info column ---------- */
+.audioPlayer_box_info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.audioPlayer_box_info h4 {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audioPlayer_box_info_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.audioPlayer_box_info_box_price {
+  border: 1px solid var(--icons-color);
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.4rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.audioPlayer_box_info_box_price small {
+  color: var(--icons-color);
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.audioPlayer_box_info_box_price p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ---------- Play button ---------- */
+.audioPlayer_box_playBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.audioPlayer_box_playBtn:hover {
+  transform: scale(1.08);
+}
+
+.audioPlayer_box_playBtn:active {
+  transform: scale(0.94);
+}
+
+/* ===============================
+   Responsive breakpoints
+   =============================== */
+
+/* ---------- Mobile (≤480px) ---------- */
+@media screen and (max-width: 480px) {
+  .audioPlayer_box {
+    padding: 0.6rem;
+    gap: 0.75rem;
+  }
+
+  .audioPlayer_box_img {
+    width: 55px;
+    height: 55px;
+    border-radius: 0.6rem;
+  }
+
+  .audioPlayer_box_info h4 {
+    font-size: 0.85rem;
+  }
+
+  .audioPlayer_box_info_box_price {
+    padding: 0.15rem 0.5rem;
+  }
+
+  .audioPlayer_box_info_box_price small {
+    font-size: 0.6rem;
+  }
+
+  .audioPlayer_box_info_box_price p {
+    font-size: 0.7rem;
+  }
+
+  .audioPlayer_box_playBtn {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.15rem;
+  }
+}
+
+/* ---------- Tablet (481px – 768px) ---------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .audioPlayer_box {
+    padding: 0.7rem;
+    gap: 0.9rem;
+  }
+
+  .audioPlayer_box_img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .audioPlayer_box_info h4 {
+    font-size: 0.95rem;
+  }
+
+  .audioPlayer_box_playBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* ---------- Laptop (769px – 1200px) ---------- */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .audioPlayer_box_img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .audioPlayer_box_playBtn {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* ---------- Desktop (1201px+) ---------- */
+@media screen and (min-width: 1201px) {
+  .audioPlayer_box {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+
+  .audioPlayer_box_img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .audioPlayer_box_info h4 {
+    font-size: 1.1rem;
+  }
+
+  .audioPlayer_box_playBtn {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.6rem;
+  }
+}

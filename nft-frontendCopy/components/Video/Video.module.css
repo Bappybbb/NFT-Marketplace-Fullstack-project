@@ -1,0 +1,92 @@
+.Video {
+  width: 100%;
+  margin-top: 14rem;
+  margin-bottom: 5rem;
+  overflow-x: hidden; /* বক্স বেরিয়ে গেলে স্ক্রলবার আসবে না */
+}
+
+/* পুরো সেকশনকে মাঝখানে রাখে */
+.Video_box {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Video_box h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.Video_box p {
+  font-size: 1.3rem;
+  width: 40%;
+  line-height: 1.2;
+}
+
+/* ১২ কলামের গ্রিড */
+.Video_box_frame {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+/* সামনের ইমেজ: কলাম লাইন ১ থেকে ১১ */
+.Video_box_frame_left {
+  grid-column: 1 / 11;
+  grid-row: 1 / 2;
+  position: relative;
+  z-index: 2;
+}
+
+.Video_box_frame_left_img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+/* পেছনের বক্স: কলাম ৫ থেকে শেষ পর্যন্ত */
+.Video_box_frame_right {
+  grid-column: 5 / -1;
+  grid-row: 1 / 2;
+  position: relative;
+  z-index: 1;
+  background-color: var(--icons-color);
+  border-radius: 2rem;
+  margin: 2rem -2rem -2rem 0;
+  padding: 3rem 3rem 3rem 0;
+  box-shadow: var(--box-shadow);
+}
+
+@media screen and (max-width: 35em) {
+  .Video_box {
+    width: 90%;
+  }
+
+  .Video_box h1 {
+    font-size: 2rem;
+  }
+
+  .Video_box p {
+    width: 100%;
+  }
+
+  .Video_box_frame {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .Video_box_frame_left,
+  .Video_box_frame_right {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .Video_box_frame_right {
+    margin: 1rem 0 0;
+    padding: 2rem;
+  }
+}
